@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: testmap
+  namespace: argocd
+
+data:
+  id_ed25519: |
+    -----BEGIN OPENSSH PRIVATE KEY-----
+    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+    QyNTUxOQAAACCu6k9R2obGGEmK36t25ukLyzox8wxWtgtw1SjYH8mDdwAAAJj/BTsO/wU7
+    DgAAAAtzc2gtZWQyNTUxOQAAACCu6k9R2obGGEmK36t25ukLyzox8wxWtgtw1SjYH8mDdw
+    AAAECy5AqaSnOyYoWovtdkOPOzl/3Pfw6eSj9biz2Pxgh/5q7qT1HahsYYSYrfq3bm6QvL
+    OjHzDFa2C3DVKNgfyYN3AAAAEGphbGFsQGlwZTQyMC0xMDQBAgMEBQ==
+    -----END OPENSSH PRIVATE KEY-----
