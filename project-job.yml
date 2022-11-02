@@ -1,0 +1,36 @@
+ 
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: batchjob
+  namespace: tosingularity
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: pi
+    spec:
+      volumes:
+        - name: privatkey
+          configMap:
+            name: testmap
+            items:
+              - key: id_ed25519
+                path: id_ed25519
+            defaultMode: 420
+      containers:
+        - name: batchjob
+          image: docker.io/fawez/docker-singularity-test:latest
+          env:
+            - name: NODES
+              value: '3'
+            - name: TASKSPERNODE
+              value: '30'
+            - name: TIME
+              value: '00:20:00'
+            - name: JOBNAME
+              value: first-value
+          volumeMounts:
+            - name: privatkey
+              mountPath: /conf/keys
+      restartPolicy: Never
