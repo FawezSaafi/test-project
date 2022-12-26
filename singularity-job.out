@@ -1,0 +1,16 @@
+hello world
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n414
+Job ID: 21179107
+Cluster: uc2
+User/Group: rd2963/ipe
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:09:12 core-walltime
+Job Wall-clock time: 00:01:09
+Memory Utilized: 2.30 MB
+Memory Efficiency: 0.01% of 16.00 GB
