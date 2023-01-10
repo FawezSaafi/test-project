@@ -1,0 +1,8 @@
+#remove noise from dataset 
+ROM ubuntu:latest
+RUN apt-get update && apt-get install -y imagemagick && apt-get install -y bc   
+RUN mkdir test-dataset
+WORKDIR /test-dataset
+CMD ls && pwd 
+CMD  chmod u+x denoise.sh 
+CMD    cd converted-dataset  && for d in *.jp2 ; do .././denoise.sh -f 2  $d ../denoise-dataset/$d  ; done && ls outputdata 
