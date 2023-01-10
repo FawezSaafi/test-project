@@ -1,0 +1,5 @@
+#convert .tiff file to .jp2 file
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y imagemagick  
+WORKDIR /test-dataset 
+CMD   cd input-dataset  && for d in *.tif ; do convert  $d ../converted-dataset/${d%.tif}.jp2  ; done && ls converted-dataset 
