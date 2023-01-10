@@ -1,0 +1,14 @@
+FROM ubuntu:18.04
+ENV NODES=
+ENV TASKSPERNODE= 
+ENV TIME= 
+ENV JOBNAME= 
+RUN apt-get update && apt-get install -y openssh-client
+RUN useradd -m user  
+RUN mkdir -p conf/keys
+VOLUME /conf/keys
+USER user
+CMD echo "141.52.64.44 job2-tosingularity.apps-crc.testing" >> etc/hosts
+CMD ssh -v  -i /conf/keys/id_ed25519   -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null rd2963@bwunicluster.scc.kit.edu -4  
+"./schedule.sh $NODES $TASKSPERNODE $TIME $JOBNAME"
+
